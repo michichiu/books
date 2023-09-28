@@ -1,0 +1,46 @@
+.header { 
+  width: 100%;
+  height: 82px;
+  text-align: center;
+  box-shadow: 0 0 40px rgba(0,0,0,.08);
+  position: relative;
+  z-index: 2;
+  background-color: var(--color-white); 
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 82px;
+  background: var(--color-white);
+}
+
+body {
+    color: var(--color-black);
+}
+
+main, .main, .nav {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 1;
+}
+
+section {
+    background-color: var(--color-gray-lighter);
+    img{
+      height: 36vh;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,105 @@
+/*$breakpoints: (
+  xs: 32rem,
+  sm: 48rem,
+  md: 64rem,
+  lg: 80rem,
+  xl: 90rem
+);*/
+
+$width-larger : 90.5rem;
+$width-large : 80rem;
+$width-medium : 64rem;
+$width-small : 48rem;
+$width-xs : 30rem;
+
+@mixin breakpoint($width) {
+  @if $width == xl {
+    @media only screen and (min-width: $width-larger) { @content; }
+  }
+  @else if $width == lg {
+    @media only screen and (min-width: $width-large) { @content; }
+  }
+  @else if $width == md {
+    @media only screen and (min-width: $width-medium) { @content; }
+  }
+  @else if $width == sm {
+    @media only screen and (min-width: $width-small) { @content; }
+  }
+  @else if $width == xs {
+    @media only screen and (min-width: $width-xs) { @content; }
+  }
+}
+
+// define HSL color variable
+@mixin defineColorHSL($color, $hue, $saturation, $lightness){
+  #{$color}: unquote("hsl(#{$hue}, #{$saturation}, #{$lightness})");#{$color}-h: #{$hue};#{$color}-s: #{$saturation};#{$color}-l: #{$lightness};
+}
+
+// return color with different opacity value
+@function alpha($color, $opacity){
+  $color: str-replace($color, 'var(');
+  $color: str-replace($color, ')');
+  $color-h: var(#{$color+'-h'});
+  $color-s: var(#{$color+'-s'});
+  $color-l: var(#{$color+'-l'});
+  @return hsla(calc(#{$color-h} * 1), $color-s, $color-l, $opacity);
+}
+
+@function lightness($color, $lightnessMultiplier){
+  $color: str-replace($color, 'var(');
+  $color: str-replace($color, ')');
+  $color-h: var(#{$color+'-h'});
+  $color-s: var(#{$color+'-s'});
+  $color-l: var(#{$color+'-l'});
+  @return hsl($color-h, $color-s, calc(#{$color-l} * #{$lightnessMultiplier}));
+}
+
+@function saturation($color, $saturationMultiplier){
+  $color: str-replace($color, 'var(');
+  $color: str-replace($color, ')');
+  $color-h: var(#{$color+'-h'});
+  $color-s: var(#{$color+'-s'});
+  $color-l: var(#{$color+'-l'});
+  @return hsl($color-h, calc(#{$color-s} * #{$saturationMultiplier}), $color-l);
+}
+
+// replace substring with another string
+// credits: https://css-tricks.com/snippets/sass/str-replace-function/
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+  @return $string;
+}
+
+
+@mixin transition($x...) {
+  -webkit-transition: $x;
+  -moz-transition: $x;
+  -o-transition: $x;
+  transition: $x;
+}
+
+@mixin display-flex {
+  display: -webkit-flexbox;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin transform($x...) {
+  -webkit-transform: $x;
+  -moz-transform: $x;
+  -o-transform: $x;
+  transform: $x;
+} 
+
+@mixin transitionfix() {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0)
+}
+
+

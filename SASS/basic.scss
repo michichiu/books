@@ -1,0 +1,188 @@
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, hr {
+    margin: 0;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    padding: 0;
+    border: 0;
+}
+html {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    font-size: 100%;
+    scroll-behavior: smooth;
+}
+
+html * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-moz-selection {
+    background-color: var(--selection-color--background);
+    color: inherit;
+    color: var(--selection-color--text, inherit);
+}
+
+::selection {
+    background-color: var(--selection-color--background);
+    color: inherit;
+    color: var(--selection-color--text, inherit);
+}
+
+*, :after, :before {
+    -webkit-box-sizing: inherit;
+            box-sizing: inherit;
+}
+
+body {
+    font-family: var(--font-family--text);
+    font-size: calc(var(--text-base-size) * var(--text-body-scale));
+    font-weight: normal;
+    overflow-x: hidden;
+    background-color: var(--color-background);
+}
+
+input, optgroup, select, textarea {
+    color: var(--color-text--primary);
+}
+
+/*! Body Typography */
+
+body, input, optgroup, select, textarea {
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    color: var(--color-text--primary);
+    background-color: var(--color-background);
+    letter-spacing: normal;
+    word-wrap: break-word;
+}
+
+
+table {
+    border-collapse: collapse;
+    margin: 0 0 var(--space-sm);
+    width: 100%;
+}
+
+table td, table th {
+    border: 1px solid var(--color-border);
+    padding: 1em;
+    //word-break: break-all;
+    text-align: inherit;
+}
+
+table th{
+  border-bottom-width: 2px;
+}
+
+table tfoot td {
+  border-top-width: 2px;
+}
+
+thead{
+  border-bottom-width: 2px;
+  white-space: nowrap;
+}
+
+
+code {
+    font-family: monospace;
+    font-size: 1em;
+    word-wrap: break-word;
+}
+
+/*! Links */
+
+a {
+    color: var(--color-link);
+    text-decoration: none transparent;
+    -webkit-text-decoration: none transparent;
+    @include transition(all 0.2s ease-in-out 0s);
+    // word-wrap: break-word;
+    //overflow-wrap: break-word;
+    //-webkit-hyphens: auto;
+    //-moz-hyphens: auto;
+    //hyphens: auto;
+
+    //word-break: break-all;
+    //word-wrap: break-word;
+}
+
+a:active, a:hover {
+    //color: var(--color-link-hover);
+    outline: 0;
+}
+
+a:focus {
+    //outline-color: var(--color-accent);
+    outline-style: dotted;
+    outline-width: 1px;
+    text-decoration: none;
+}
+
+ul, ol {
+   margin: 0 0 var(--space-md) 0;
+}
+
+li ul, li ol {
+   margin-bottom: 0;
+}
+
+li {
+    margin: var(--space-xs) 0 var(--space-xs) 0;
+}
+li a:focus, ol a:focus, p a:focus, ul a:focus {
+    outline-width: thin;
+}
+
+
+img {
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+hr{
+  border-top: var(--sep-height) solid var(--color-accent);
+  margin: var(--space-xl) auto;
+  text-align: center;
+  &:after {
+    //content: '§';
+    content: var(--sep-content);
+    display: inline-block;
+    position: relative;
+    top: -15px;
+    padding: 0 10px;
+    background: var(--color-background);
+    color: var(--color-accent);
+    font-size: 18px;
+  }
+}
+
+cite {
+  font-size: calc(var(--text-base-size) * var(--text-body-scale));
+  font-style: normal;
+  font-weight: 600;
+}
+
+pre {
+  overflow: auto;
+  padding: var(--space-xl);
+  border: 2px solid var(--color-border);
+}
+
+figcaption {
+  font-size: var(--text-sm);
+  color: var(--color-text--secondary);
+}
+
+pre {
+    white-space: pre-wrap;       
+    white-space: -moz-pre-wrap;  
+    white-space: -pre-wrap;      
+    white-space: -o-pre-wrap;    
+    word-wrap: break-word;     
+}

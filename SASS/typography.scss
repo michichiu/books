@@ -1,0 +1,75 @@
+
+
+body, p {
+    font-size: var(--text-base-size);
+    line-height:1.5;
+    line-height:var(--body-line-height,1.5)
+}
+
+p {
+    font-size: calc(var(--text-base-size) * var(--text-body-scale));
+    margin-bottom: var(--space-md);
+}
+ol, ul {
+    font-size: calc(var(--text-base-size) * var(--text-body-scale));
+}
+
+h1, h2, h3, h4, h5, h6 {
+    clear: both;
+    display: block;
+    font-family: var(--font-family--heading);
+    font-style: normal;
+    font-weight: var(--font-weight--heading);
+    color: var(--font-color--heading);
+    line-height:1.2;
+    line-height:var(--heading-line-height,1.2);
+    margin-bottom: var(--space-xxs);
+}
+
+
+h1,.text-xxxxl {
+    font-size: 3em;
+    //font-size: var(--text-xxxxl,2.985em);
+    letter-spacing: -.025em;
+    @include breakpoint(sm) {
+      font-size: 5em;
+    }
+} 
+h2,.text-xxxl {
+    font-size: 2.48832em;
+    font-size: var(--text-xxxl,2.488em);
+}
+
+h3, .text-xxl {
+    font-size:2.0736em;
+    font-size: var(--text-xxl, 2.074em);
+}
+
+h4, .text-xl {
+    font-size:1.728em;
+    font-size:var(--text-xl,1.728em);
+    letter-spacing: -.025em;
+}
+
+h5,.text-lg {
+   font-size:1.44em;
+   font-size:var(--text-lg,1.44em)
+}
+h6,.text-md {
+   font-size:1.2em;
+   font-size:var(--text-md,1.2em)
+}
+.text-base{
+   font-size:1em;
+   font-size:var(--text-base-size,1em)
+}
+
+small,
+.text-sm {
+  font-size:.83333em;
+  font-size:var(--text-sm,0.833em)
+}
+.text-xs {
+  font-size:.69444em;
+  font-size:var(--text-xs,0.694em)
+}
